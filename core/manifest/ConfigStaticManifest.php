@@ -193,7 +193,7 @@ class SS_ConfigStaticManifest_Parser {
 			if($this->pos >= $this->length) return null;
 			$next = $this->tokens[$this->pos++];
 		}
-		while($ignoreWhitespace && is_array($next) && $next[0] == T_WHITESPACE);
+		while($ignoreWhitespace && ((array)$next === $next) && $next[0] == T_WHITESPACE);
 
 		return $next;
 	}
